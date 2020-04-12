@@ -5,7 +5,7 @@ const hbs=require('hbs');
 const geocode=require('../util/geocode');
 const forecast=require('../util/weatherForecast');
 
-const port=process.env.POrt||300;
+const port=process.env.PORT||300;
 //define path for express config.
 const publicPath=path.join(__dirname,'../public');
 const viewsPath=path.join(__dirname,'../templates/views');
