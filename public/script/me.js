@@ -39,7 +39,7 @@ speed.textContent="";
           
           messageError.textContent=data.weather_description;
 
-  city.textContent=data.place + data.region;
+  city.textContent=data.place + " " +data.region;
  country.textContent=data.country;
 temp.textContent=data.temperature;
 precip.textContent=data.precipitation;
