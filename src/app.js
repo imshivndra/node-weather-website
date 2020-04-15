@@ -4,8 +4,8 @@ const app=express();
 const hbs=require('hbs');
 const geocode=require('../util/geocode');
 const forecast=require('../util/weatherForecast');
+const port=process.env.PORT||3000;
 
-const port=process.env.PORT||300;
 //define path for express config.
 const publicPath=path.join(__dirname,'../public');
 const viewsPath=path.join(__dirname,'../templates/views');
@@ -28,8 +28,8 @@ app.get('',(req,res)=>{
        );
 app.get('/help',(req,res)=>{
     res.render('help',{
-        helpText:"here is some important help!",
-        name:"shivendra"
+        helpText:"will be updated soon !!"
+        
     
     }
     )
@@ -37,8 +37,8 @@ app.get('/help',(req,res)=>{
 
 app.get('/about',(req,res)=>{
     res.render('about',{
-        aboutText:"know about us :) :D !!",
-        name:"shivendra"
+        aboutText:"know about us :) :D !!"
+        
     }
     )
 });
@@ -46,28 +46,32 @@ app.get('/about',(req,res)=>{
 
 
 app.get('/weather',(req,res)=>{
-    
-    if(!req.query.address){
-         res.send("please select city ");
-    }
-    else{
-        geocode(req.query.address,(error,{latitude ,longitude,location}={})=>{
-            if(error){
-                return res.send(error);
-                                          }
- forecast(latitude,longitude,(error,{weatherInfo})=>{
-    if(error){
-        return res.send(error);
-             }
-    res.send({weatherInfo,
-             location
-             });
-    
-          console.log(weatherInfo);                                                                    });            
    
-                
-                                                    });
-       }
+    if(!req.query.address){
+         res.send("please enter city");
+    }
+                      
+ else{
+    geocode(req.query.address,(error,{latitude ,longitude}={})=>{
+         if(error){
+                  return res.send(error);
+                                          }
+          forecast(latitude,longitude,(error,{temperature,place,region,country,precipitation,humidity,pressure,icon,weather_description,wind_speed})=>{
+             if(error){
+                     return res.send(error);
+                                               }
+                      res.send({temperature,place,region,country,precipitation,humidity,pressure,icon,weather_description,wind_speed
+                               
+                                            });
+                                            
+                                                                                    
+                                                                                                                                                            });            
+                                                                                   
+                                                                                                
+             });
+    }     
+    
+   
         
     
 });

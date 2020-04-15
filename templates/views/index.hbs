@@ -2,28 +2,78 @@
 <html>
 <head>
     
-    <title> Weather       </title>
+    <title> Weather  </title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/images/we.png">
     
     
 </head>
 <body>
-    <div class="main-content">
-    {{>header}}
-    <h1 class="start">{{heading}}</h1>
-       <div class="form1">
-        <form>
-        <input placeholder="Enter location">
-            <button>search</button>
+<nav>
+        <ul class="topnav-left" >
+             <li><a href='/'>Weather</a></li>
+             <li><a href='/help'>Contact</a></li>
+             <li><a href='/about'> About</a></li>
+            <div class="container">   
+            
+            
+            
+            
+            
+            </div>
+            
+        </ul>
+        </nav>
+
+
+   <div class="h-1"> 
+      
+    <h1>Weather Forecast</h1>
+                            </div>
+        
+ <div class="form-1" >
+    <form>
+ <input size=40 placeholder="Enter Location : City , State">
+    <button>Search</button>
         </form>
-        <p id="message1">  </p>
-        <p id="message2">  </p>
-           </div>
-        </div>
+                 </div>  
     
-      {{>footer}}
-    <script type="text/javascript" src="/script/me.js"> </script>
+ <p id="error"></p>
+    <div class="container">
+    
+ <div class="container-2">
+    <p class="p1"></p>
+     <p class="p2"></p>
+        
+      <div class="img-containner">
+     <img src="" class="hideimage" id="img-1">     
+    <p id="temperature"></p>
+     </div>
+     
+ <div class="row">
+         
+     <div class="left-col">
+     <p id="precipitation"></p>
+         <p id="humidity"></p>
+     </div>
+     <div class="right-col">
+     <p id="pressure"></p>
+         <p id="wind"></p>
+     </div>
+             
+               </div>
+        
+       
+    
+   </div>   
+    
+    
+   
+    
+    
+    
+     </div>
+    <script type="text/javascript" src="/script/me.js">   </script>
 </body>
     
 </html>

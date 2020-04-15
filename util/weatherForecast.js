@@ -8,7 +8,17 @@ const weatherForecast=(latitude,longitude,callback)=>{
        } 
         
         else{
-            callback(undefined, {weatherInfo:"It is " + response.body.current.temperature + "degree celsius outside.There are" + response.body.current.precip + "% chances of rain."
+            callback(undefined, {place:response.body.location.name,
+                country:response.body.location.country,
+                region:response.body.location.region,
+                temperature: response.body.current.temperature +'° Celsius' ,
+                precipitation: 'Precipitation : ' + response.body.current.precip + ' MM' ,
+                wind_speed:'Wind Speed : ' + response.body.current.wind_speed + ' Km/hr',
+                pressure:'Pressure : ' + response.body.current.pressure + ' MB',
+                humidity:'Humidity : ' + response.body.current.humidity + ' %',
+                icon: response.body.current.weather_icons[0],
+                weather_description: response.body.current.weather_descriptions[0]
+
                                 });
         }
     });
