@@ -13,6 +13,9 @@ const speed=document.querySelector('#wind');
  weatherForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     const location=search.value;
+     if(location.length===0){
+         return messageError.textContent='Please Enter City';
+     }
     
    messageError.textContent='loading...';
 
