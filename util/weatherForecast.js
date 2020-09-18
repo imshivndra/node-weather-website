@@ -10,6 +10,7 @@ const weatherForecast=(latitude,longitude,callback)=>{
         else{
             callback(undefined, {place:response.body.location.name,
                 country:response.body.location.country,
+                region:response.body.location.region,
                 temperature: response.body.current.temperature +'° Celsius' ,
                 precipitation: 'Precipitation : ' + response.body.current.precip + ' MM' ,
                 wind_speed:'Wind Speed : ' + response.body.current.wind_speed + ' Km/hr',
