@@ -42,7 +42,7 @@ speed.textContent="";
           
           messageError.textContent=data.weather_description;
 
-  city.textContent=data.location + " " +data.region;
+  city.textContent=data.location + " " +data.country;
  country.textContent=data.country;
 temp.textContent=data.temperature;
 precip.textContent=data.precipitation;

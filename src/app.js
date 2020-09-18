@@ -56,11 +56,11 @@ app.get('/weather',(req,res)=>{
          if(error){
                   return res.send(error);
                                           }
-          forecast(latitude,longitude,(error,{temperature,region,country,precipitation,humidity,pressure,icon,weather_description,wind_speed})=>{
+          forecast(latitude,longitude,(error,{temperature,country,precipitation,humidity,pressure,icon,weather_description,wind_speed})=>{
              if(error){
                      return res.send(error);
                                                }
-                      res.send({temperature,location,region,country,precipitation,humidity,pressure,icon,weather_description,wind_speed
+                      res.send({temperature,location,country,precipitation,humidity,pressure,icon,weather_description,wind_speed
                                
                                             });
                                             
